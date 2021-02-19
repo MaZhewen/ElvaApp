@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">老年人行为监控软件</string>
+    <string name="title_home">我的</string>
+    <string name="title_dashboard">历史数据</string>
+    <string name="title_notifications">当前数据</string>
+    <string name="title_login_or_register">登录/注册</string>
+    <string name="title_login">登录</string>
+    <string name="title_register">注册</string>
+    <string name="text_username">用户名</string>
+    <string name="text_password">密码</string>
+    <string name="title_return">返回</string>
+    <string name="text_username_edit">username</string>
+    <string name="text_startdate">起始日期</string>
+    <string name="text_enddate">结束日期</string>
+    <string name="text_date">日期</string>
+    <string name="text_starttime">起始时间</string>
+    <string name="text_endtime">结束时间</string>
+    <string name="title_select">选择</string>
+    <string name="title_confirm">确定</string>
+    <string name="title_please_select">请选择</string>
+    <string name="text_sensor_1">传感器1</string>
+    <string name="text_sensor_2">传感器2</string>
+    <string name="text_sensor_data">传感器数据</string>
+    <string name="text_x_axis">x轴加速度</string>
+    <string name="text_y_axis">y轴加速度</string>
+    <string name="text_z_axis">z轴加速度</string>
+    <string name="text_current_behavior">行为识别结果</string>
+    <string name="text_nothing">无</string>
+
+</resources>
