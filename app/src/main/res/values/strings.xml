@@ -10,6 +10,7 @@
     <string name="text_password">密码</string>
     <string name="title_return">返回</string>
     <string name="text_username_edit">username</string>
+    <string name="text_password_edit">username</string>
     <string name="text_startdate">起始日期</string>
     <string name="text_enddate">结束日期</string>
     <string name="text_date">日期</string>
@@ -26,5 +27,9 @@
     <string name="text_z_axis">z轴加速度</string>
     <string name="text_current_behavior">行为识别结果</string>
     <string name="text_nothing">无</string>
-
+    <string name="image_user_head">用户头像</string>
+    <string name="button_user_bind">用户绑定</string>
+    <string name="button_sensor_bind">传感器绑定</string>
+    <string name="button_model_practice">识别模型训练</string>
+    <string name="button_paras_practice">去噪参数训练</string>
 </resources>
