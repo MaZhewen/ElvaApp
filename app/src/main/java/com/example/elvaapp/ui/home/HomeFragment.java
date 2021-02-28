@@ -23,7 +23,8 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     private Button buttonLoginIn;
-
+    private String[] buttonsOlder = {"传感器绑定", "识别模型训练", "模型参数训练"};
+    private String[] buttonsGuarder = {"老年人绑定"};
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
@@ -76,11 +77,25 @@ public class HomeFragment extends Fragment {
         if(hasLogin == true)
         {
             buttonLoginIn.setVisibility(View.INVISIBLE);
-            getActivity().findViewById(R.id.button_user_bind).setVisibility(View.VISIBLE);
-            getActivity().findViewById(R.id.button_sensor_bind).setVisibility(View.VISIBLE);
-            getActivity().findViewById(R.id.button_paras_practice).setVisibility(View.VISIBLE);
-            getActivity().findViewById(R.id.button_model_practice).setVisibility(View.VISIBLE);
             getActivity().findViewById(R.id.userhead).setVisibility(View.VISIBLE);
+            if(loginInstance.userType == 1) // 老年人
+            {
+                Button btn1 = getActivity().findViewById(R.id.button_user_bind);
+                btn1.setVisibility(View.VISIBLE);
+                btn1.setText("传感器绑定");
+                Button btn2 = getActivity().findViewById(R.id.button_sensor_bind);
+                btn2.setVisibility(View.VISIBLE);
+                btn2.setText("识别模型训练");
+                Button btn3 = getActivity().findViewById(R.id.button_model_practice);
+                btn3.setVisibility(View.VISIBLE);
+                btn3.setText("模型参数训练");
+            }
+            else if(loginInstance.userType == 2) // 监护者
+            {
+                Button btn1 = getActivity().findViewById(R.id.button_user_bind);
+                btn1.setVisibility(View.VISIBLE);
+                btn1.setText("老年人绑定");
+            }
         }
         else
         {

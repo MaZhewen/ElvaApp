@@ -59,6 +59,8 @@ public class DashboardFragment extends Fragment {
     private Button buttonSelectStartTime = null;
     private Button buttonSelectEndTime = null;
     private Button buttonConfirm = null;
+    private String[] behaviors = {"站立", "行走", "坐", "躺", "弯腰", "上下楼梯"};
+    private String[] healthEvaluate = {"健康", "亚健康", "非健康" };
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -99,6 +101,9 @@ public class DashboardFragment extends Fragment {
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new SpinnerOnItemSelectedListener());
         spinner.setVisibility(View.INVISIBLE);
+
+        getActivity().findViewById(R.id.text_health_evaluate).setVisibility(View.INVISIBLE);
+        getActivity().findViewById(R.id.text_health_evaluate_result).setVisibility(View.INVISIBLE);
     }
 
     // 按钮点击监听器
@@ -169,6 +174,12 @@ public class DashboardFragment extends Fragment {
             Spinner spinner = getActivity().findViewById(R.id.show_spinner);
             spinner.setVisibility(View.VISIBLE);
             spinner.setSelection(0);
+
+            getActivity().findViewById(R.id.text_health_evaluate).setVisibility(View.VISIBLE);
+            TextView ret = getActivity().findViewById(R.id.text_health_evaluate_result);
+            ret.setVisibility(View.VISIBLE);
+            int index = new Random().nextInt(2);
+            ret.setText(healthEvaluate[index]);
         }
 
         public void PopErrorDialog(String title)
@@ -217,9 +228,13 @@ public class DashboardFragment extends Fragment {
     {
         if (!check_can_shown_chart())
             return;
-        ArrayList<String> names = new ArrayList<String>(Arrays.asList("走：", "坐：", "躺：", "跑："));
-        ArrayList<Double> values = new ArrayList<Double>(Arrays.asList(500.00, 800.00, 1000.00, 900.00));
-        ArrayList<Integer> colors = new ArrayList<Integer>(Arrays.asList(Color.BLUE, Color.GREEN, Color.MAGENTA, Color.RED));
+        ArrayList<String> names = new ArrayList<String>();
+        for(int i = 0; i < behaviors.length; ++i)
+        {
+            names.add(behaviors[i]);
+        }
+        ArrayList<Double> values = new ArrayList<Double>(Arrays.asList(16.3, 18.5, 18.3, 40.7, 1.2, 5.0));
+        ArrayList<Integer> colors = new ArrayList<Integer>(Arrays.asList(Color.BLUE, Color.GREEN, Color.MAGENTA, Color.RED, Color.CYAN, Color.YELLOW));
 
         CategorySeries dataSet = buildCategoryDataset("行为统计", names, values);
         DefaultRenderer renderer = buildCategoryRenderer(colors);
@@ -294,13 +309,14 @@ public class DashboardFragment extends Fragment {
         DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         LocalDateTime startDateTime = LocalDateTime.of(dateSelect, startTime);
         LocalDateTime endDateTime = LocalDateTime.of(dateSelect, endTime);
+        Random r = new Random();
+
         for(LocalDateTime currentDateTime = startDateTime; currentDateTime.isBefore(endDateTime) || currentDateTime.isEqual(endDateTime); currentDateTime= currentDateTime.plusMinutes(30)){
-            Random r = new Random();
             UserInfo userInfo = null;
-            if( r.nextInt(100) > 50)
-                userInfo = new UserInfo(df.format(currentDateTime), "吃饭", true);
-            else
-                userInfo = new UserInfo(df.format(currentDateTime), "睡觉", false);
+            Integer index = r.nextInt(6);
+            if(index == 3)
+                index -= 1;
+            userInfo = new UserInfo(df.format(currentDateTime), behaviors[index], false);
             userInfos.add(userInfo);
 
         }

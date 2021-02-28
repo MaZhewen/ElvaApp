@@ -94,7 +94,7 @@ public class NotificationsFragment extends Fragment {
 
         // 选择要显示的传感器数据
         Spinner spinner = (Spinner)getActivity().findViewById(R.id.sensor_spinner);
-        String[] mItems = {"传感器1", "传感器2"};
+        String[] mItems = {"传感器1", "传感器2", "传感器3"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, mItems);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -153,15 +153,16 @@ public class NotificationsFragment extends Fragment {
     {
         float half_range = 5f;
         ArrayList<Float> sensorDatas = new ArrayList<>();
-        for (int i = 0; i < 6; ++i)
+        for (int i = 0; i < 9; ++i)
             sensorDatas.add(random.nextFloat() * half_range * 2 - half_range);
         UpdateSensorDataText(sensorDatas);
         AddToLineChart(sensorDatas);
     }
     private void UpdateSensorDataText(ArrayList<Float> sensorDatas)
     {
-        Integer[] textViewIds = {R.id.textView_sensor_1_x, R.id.textView_sensor_1_y,R.id.textView_sensor_1_z,
-                                R.id.textView_sensor_2_x,R.id.textView_sensor_2_y,R.id.textView_sensor_2_z};
+        Integer[] textViewIds = {R.id.textView_sensor_1_x, R.id.textView_sensor_1_y, R.id.textView_sensor_1_z,
+                                R.id.textView_sensor_2_x, R.id.textView_sensor_2_y, R.id.textView_sensor_2_z,
+                                R.id.textView_sensor_3_x, R.id.textView_sensor_3_y, R.id.textView_sensor_3_z};
         float sumVal = 0;
         for (int i = 0; i < textViewIds.length; ++i)
         {
@@ -173,10 +174,9 @@ public class NotificationsFragment extends Fragment {
             }
         }
         TextView result = getActivity().findViewById(R.id.textView_current_behavior_result);
-        if (sumVal > 20f || sumVal < -20f)
-            result.setText("危险！！");
-        else
-            result.setText("正常");
+        String[] behaviors = {"站立", "行走", "坐", "躺", "弯腰", "上下楼梯"};
+        Integer index = new Random().nextInt(6);
+        result.setText(behaviors[index]);
     }
 
     private void UpdateLineChart()
@@ -210,8 +210,10 @@ public class NotificationsFragment extends Fragment {
         Spinner spinner = (Spinner)getActivity().findViewById(R.id.sensor_spinner);
         ArrayList<Entry> values = new ArrayList<Entry>();
         int start_index = 0;
-        if(spinner.getSelectedItemPosition() != 0)
+        if(spinner.getSelectedItemPosition() == 1)
             start_index = 3;
+        else if(spinner.getSelectedItemPosition() == 2)
+            start_index = 6;
         for(int i = 0; i < start_index + 3; ++i)
             values.add(new Entry(x, sensorDatas.get(i)));
         x++;

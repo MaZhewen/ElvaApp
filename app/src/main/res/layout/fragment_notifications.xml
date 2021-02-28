@@ -32,81 +32,21 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView_sensor_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="39dp"
-        android:text="@string/text_sensor_1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView_sensor_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/text_sensor_2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_sensor_1" />
-
-    <TextView
         android:id="@+id/textView_sensor_1_x"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="39dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
         android:text="@string/text_sensor_data"
         app:layout_constraintStart_toEndOf="@+id/textView_sensor_1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView_sensor_2_x"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/text_sensor_data"
-        app:layout_constraintStart_toEndOf="@+id/textView_sensor_2"
-        app:layout_constraintTop_toBottomOf="@+id/textView_sensor_1_x" />
-
-    <TextView
-        android:id="@+id/textView_sensor_data_x"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/text_x_axis"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_sensor_2_x" />
-
-    <TextView
-        android:id="@+id/textView_sensor_data_y"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/text_y_axis"
-        app:layout_constraintStart_toEndOf="@+id/textView_sensor_data_x"
-        app:layout_constraintTop_toBottomOf="@+id/textView_sensor_2_y" />
-
-    <TextView
-        android:id="@+id/textView_sensor_data_z"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/text_y_axis"
-        app:layout_constraintStart_toEndOf="@+id/textView_sensor_data_y"
-        app:layout_constraintTop_toBottomOf="@+id/textView_sensor_2_z" />
-
-    <TextView
         android:id="@+id/textView_sensor_1_y"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="39dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
         android:text="@string/text_sensor_data"
         app:layout_constraintStart_toEndOf="@+id/textView_sensor_1_x"
         app:layout_constraintTop_toTopOf="parent" />
@@ -115,38 +55,118 @@
         android:id="@+id/textView_sensor_2_y"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
         android:text="@string/text_sensor_data"
         app:layout_constraintStart_toEndOf="@+id/textView_sensor_2_x"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sensor_1_y" />
+
+    <TextView
+        android:id="@+id/textView_sensor_3_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/text_sensor_data"
+        app:layout_constraintStart_toEndOf="@+id/textView_sensor_3_x"
         app:layout_constraintTop_toBottomOf="@+id/textView_sensor_1_y" />
 
     <TextView
         android:id="@+id/textView_sensor_1_z"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="39dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
         android:text="@string/text_sensor_data"
         app:layout_constraintStart_toEndOf="@+id/textView_sensor_1_y"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/textView_sensor_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/text_sensor_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sensor_1" />
+
+    <TextView
+        android:id="@+id/textView_sensor_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/text_sensor_3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sensor_1" />
+
+    <TextView
         android:id="@+id/textView_sensor_2_z"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
         android:text="@string/text_sensor_data"
         app:layout_constraintStart_toEndOf="@+id/textView_sensor_2_y"
         app:layout_constraintTop_toBottomOf="@+id/textView_sensor_1_z" />
 
     <TextView
+        android:id="@+id/textView_sensor_3_z"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/text_sensor_data"
+        app:layout_constraintStart_toEndOf="@+id/textView_sensor_3_y"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sensor_1_z" />
+
+    <TextView
+        android:id="@+id/textView_sensor_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/text_sensor_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_sensor_2_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/text_sensor_data"
+        app:layout_constraintStart_toEndOf="@+id/textView_sensor_2"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sensor_1_x" />
+
+    <TextView
+        android:id="@+id/textView_sensor_3_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/text_sensor_data"
+        app:layout_constraintStart_toEndOf="@+id/textView_sensor_3"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sensor_1_x" />
+
+    <TextView
+        android:id="@+id/textView_sensor_data_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/text_y_axis"
+        app:layout_constraintStart_toEndOf="@+id/textView_sensor_data_x"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sensor_2_y" />
+
+    <TextView
         android:id="@+id/textView_current_behavior"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="122dp"
-        android:layout_marginTop="39dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="24dp"
         android:text="@string/text_current_behavior"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_sensor_data_x" />
@@ -155,11 +175,31 @@
         android:id="@+id/textView_current_behavior_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="39dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
         android:text="@string/text_nothing"
         app:layout_constraintStart_toEndOf="@+id/textView_current_behavior"
         app:layout_constraintTop_toBottomOf="@+id/textView_sensor_data_y" />
+
+    <TextView
+        android:id="@+id/textView_sensor_data_z"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/text_z_axis"
+        app:layout_constraintStart_toEndOf="@+id/textView_sensor_data_y"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sensor_2_z" />
+
+    <TextView
+        android:id="@+id/textView_sensor_data_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/text_x_axis"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sensor_2_x" />
 
     <Spinner
         android:id="@+id/sensor_spinner"

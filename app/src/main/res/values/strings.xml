@@ -3,6 +3,7 @@
     <string name="title_home">我的</string>
     <string name="title_dashboard">历史数据</string>
     <string name="title_notifications">当前数据</string>
+    <string name="title_message">消息</string>
     <string name="title_login_or_register">登录/注册</string>
     <string name="title_login">登录</string>
     <string name="title_register">注册</string>
@@ -21,6 +22,7 @@
     <string name="title_please_select">请选择</string>
     <string name="text_sensor_1">传感器1</string>
     <string name="text_sensor_2">传感器2</string>
+    <string name="text_sensor_3">传感器3</string>
     <string name="text_sensor_data">传感器数据</string>
     <string name="text_x_axis">x轴加速度</string>
     <string name="text_y_axis">y轴加速度</string>
@@ -32,4 +34,7 @@
     <string name="button_sensor_bind">传感器绑定</string>
     <string name="button_model_practice">识别模型训练</string>
     <string name="button_paras_practice">去噪参数训练</string>
+    <string name="text_health_evaluate">行为健康评价：</string>
+    <string name="text_user_type">用户类型：</string>
+    <string name="text_message">消息</string>
 </resources>

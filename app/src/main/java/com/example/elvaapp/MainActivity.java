@@ -3,6 +3,7 @@ package com.example.elvaapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
+                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications, R.id.navigation_message)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
@@ -49,5 +50,9 @@ public class MainActivity extends AppCompatActivity {
                 mFragment.onActivityResult(requestCode, resultCode, data);
             }
         }
+//         BottomNavigationView navView = findViewById(R.id.nav_view);
+//         navView.getMenu().add(0,3, 3, "消息");
+//         MenuItem item = navView.getMenu().findItem(3);
+//         item.setIcon(R.drawable.ic_search_black_24dp);
     }
 }

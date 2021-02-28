@@ -135,11 +135,31 @@
 
     <Spinner
         android:id="@+id/show_spinner"
-        android:layout_width="97dp"
-        android:layout_height="26dp"
+        android:layout_width="160dp"
+        android:layout_height="27dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="41dp"
         app:layout_constraintBottom_toTopOf="@+id/linear_layout"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_health_evaluate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/text_health_evaluate"
+        app:layout_constraintStart_toEndOf="@+id/show_spinner"
+        app:layout_constraintTop_toBottomOf="@+id/button_confirm" />
+
+    <TextView
+        android:id="@+id/text_health_evaluate_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/text_nothing"
+        app:layout_constraintStart_toEndOf="@+id/text_health_evaluate"
+        app:layout_constraintTop_toBottomOf="@+id/button_confirm" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
