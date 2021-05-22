@@ -11,6 +11,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Looper;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -53,15 +54,16 @@ public class MainActivity extends AppCompatActivity {
         intent = new Intent(this, LongRunningService.class);
         startService(intent);
 
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run()
-            {
-                // notice();
-                PopDangerDialog("用户疑似发生危险");
-            }
-        },2000);//延时1s执行
+//        Timer timer = new Timer();
+//        timer.schedule(new TimerTask() {
+//            @Override
+//            public void run()
+//            {
+//                Looper.prepare();
+//                PopDangerDialog("用户疑似发生危险");
+//                Looper.loop();
+//            }
+//        },2000);//延时1s执行
     }
 
     @Override

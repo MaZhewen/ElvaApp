@@ -37,4 +37,11 @@
     <string name="text_health_evaluate">行为健康评价：</string>
     <string name="text_user_type">用户类型：</string>
     <string name="text_message">消息</string>
+    <string name="text_user_bind">输入待绑定用户名</string>
+    <string name="text_bind">绑定</string>
+    <string name="text_select_sensor_bind">选择要绑定的传感器</string>
+    <string name="text_recognition_model_train_desc">请做出以下动作，结束后点击确定键</string>
+    <string name="text_noise_model_train_desc">点击开始训练模型参数，点击结束停止</string>
+    <string name="title_start">开始</string>
+    <string name="title_end">结束</string>
 </resources>

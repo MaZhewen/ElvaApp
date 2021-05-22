@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ElvaApp">
         <activity android:name=".Login"></activity>
+        <activity android:name=".UserBind"></activity>
+        <activity android:name=".SensorBind"></activity>
+        <activity android:name=".RecogModelTrain"></activity>
+        <activity android:name=".NoiseModelTrain"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">

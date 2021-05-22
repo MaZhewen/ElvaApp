@@ -142,7 +142,9 @@ public class NotificationsFragment extends Fragment {
         timerTask = new TimerTask() {
             @Override
             public void run() {
+                // Looper.prepare();
                 tickHandler.sendEmptyMessage(UPDATE_LINE_CHART);
+                // Looper.loop();
             }
         };
         timer = new Timer();
@@ -175,8 +177,10 @@ public class NotificationsFragment extends Fragment {
         }
         TextView result = getActivity().findViewById(R.id.textView_current_behavior_result);
         String[] behaviors = {"站立", "行走", "坐", "躺", "弯腰", "上下楼梯"};
-        Integer index = new Random().nextInt(6);
-        result.setText(behaviors[index]);
+        if (result != null){
+            Integer index = new Random().nextInt(6);
+            result.setText(behaviors[index]);
+        }
     }
 
     private void UpdateLineChart()

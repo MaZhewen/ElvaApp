@@ -16,13 +16,21 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.elvaapp.Login;
+import com.example.elvaapp.NoiseModelTrain;
 import com.example.elvaapp.R;
+import com.example.elvaapp.RecogModelTrain;
+import com.example.elvaapp.SensorBind;
+import com.example.elvaapp.UserBind;
 import com.example.elvaapp.UserInstance.LoginInstance;
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     private Button buttonLoginIn;
+    private Button buttonUserBind;
+    private Button buttonSensorBind;
+    private Button buttonRecogModelTrain;
+    private Button buttonNoiseModelTrain;
     private String[] buttonsOlder = {"传感器绑定", "识别模型训练", "模型参数训练"};
     private String[] buttonsGuarder = {"老年人绑定"};
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -44,7 +52,12 @@ public class HomeFragment extends Fragment {
     {
         super.onActivityCreated(savedInstanceState);
         buttonLoginIn = (Button) getActivity().findViewById(R.id.button_login);
+        buttonUserBind = (Button) getActivity().findViewById(R.id.button_user_bind);
+        buttonSensorBind = (Button) getActivity().findViewById(R.id.button_sensor_bind);
+        buttonRecogModelTrain = (Button) getActivity().findViewById(R.id.button_model_practice);
+        buttonNoiseModelTrain = (Button) getActivity().findViewById(R.id.button_paras_practice);
 
+        // 登录
         buttonLoginIn.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -55,6 +68,69 @@ public class HomeFragment extends Fragment {
                 getActivity().startActivityForResult(intent, 2);
             }
         });
+
+        // 用户绑定
+        buttonUserBind.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                LoginInstance loginInstance = LoginInstance.getInstance();
+                boolean hasLogin = loginInstance.hasLogin;
+                if(hasLogin == true)
+                {
+                    if(loginInstance.userType == 1) // 老年人
+                    {
+                        Intent intent = new Intent();
+                        intent.setClass(getActivity(), SensorBind.class);
+                        getActivity().startActivityForResult(intent, 2);
+                    }
+                    else if(loginInstance.userType == 2) // 监护者
+                    {
+                        Intent intent = new Intent();
+                        intent.setClass(getActivity(), UserBind.class);
+                        getActivity().startActivityForResult(intent, 2);
+                    }
+                }
+            }
+        });
+
+//        // 传感器绑定
+//        buttonSensorBind.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View v)
+//            {
+//                Intent intent = new Intent();
+//                intent.setClass(getActivity(), SensorBind.class);
+//                getActivity().startActivityForResult(intent, 2);
+//            }
+//        });
+
+        // 识别模型训练
+        buttonSensorBind.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), RecogModelTrain.class);
+                getActivity().startActivityForResult(intent, 2);
+            }
+        });
+
+        // 噪声模型训练
+        buttonRecogModelTrain.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), NoiseModelTrain.class);
+                getActivity().startActivityForResult(intent, 2);
+            }
+        });
+
         ImageView imageView = getActivity().findViewById(R.id.userhead);
         // imageView.
         updateLoginState();
